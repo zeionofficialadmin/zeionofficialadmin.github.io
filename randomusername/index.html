@@ -1,0 +1,19 @@
+<html>
+  <title>Random username</title>
+  <body>
+    seperate by commas, spaces, semicolons, or |.<br>put -1 in nums for random length<br><div id="vals",contenteditable>q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,.,_</div><br><input type="number" id="num" value="-1"></div><br><button>do it</button><br>Result: <span id='result'></span>
+  </body>
+  <script>
+    doit()
+    function doit() {
+      let res=''
+      let val=document.getElementById('vals').innerHTML.split(/,| |;|\|/g)
+      let len=parseInt(document.getElementById('num').value)
+      len=(len===-1)?Math.ceil(50*Math.random()):len
+      for (let i=0;i<len;i++){
+        res+=val[Math.floor(val.length*Math.random())]
+      }
+      document.getElementById('result').innerHTML=res;
+    }
+  </script>
+</html>
